@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://https://570127567.github.io</id>
+    <title>Gridea</title>
+    <updated>2020-06-25T04:06:37.256Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://https://570127567.github.io"/>
+    <link rel="self" href="https://https://570127567.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://https://570127567.github.io/images/avatar.png</logo>
+    <icon>https://https://570127567.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Web服务器通讯原理]]></title>
+        <id>https://https://570127567.github.io/post/sunjiaze/</id>
+        <link href="https://https://570127567.github.io/post/sunjiaze/">
+        </link>
+        <updated>2020-06-22T12:48:41.000Z</updated>
+        <content type="html"><![CDATA[<p>Web服务器通讯原理</p>
+<p>一、名词解释</p>
+<p>1.IP<br>
+     正统定义：互联网协议地址。<br>
+     可以俗气的理解成：ip实际上就是地址，如果我想到你家去找你玩，就要知道你家住在哪里，ip就是你电脑的地址，在网络上可以通过ip来访问你的计算机。</p>
+<p><img src="https://https://570127567.github.io/post-images/1593057900429.jpg" alt="" loading="lazy"><br>
+   2.域名<br>
+     域名实际上是为了人们方便记忆而创造的一个字符型标识<br>
+   3.DNS<br>
+      DNS是将域名转化为IP的一个网络协议<br>
+      通俗理解为ip是计算机所理解的语言，为了方便人们记忆有了域名，而DNS是把域名连接到ip的一个方法。<br>
+   4.端口<br>
+      端口主要是网络接口，类似于电脑的接口比如你去访问别人的网站，一般来说实际上你是去他的80端口进行通信<br>
+      0端口是预留端口，一般不会用到<br>
+    5.HTTP协议<br>
+      HTTP协议也叫超文本传输协议，是互联网上应用最为广泛的一种网络协议。<br>
+      https比http多了一个叫做证书的东西，目的是为了防止中途截取</p>
+<p>二、从访客的角度看网页浏览流程<br>
+     1.用户浏览器输入协议：//域名。<br>
+        例如：http：//baidu.cn/</p>
+<p>2.用户浏览器通过系统向DNS查询域名对应的ip地址。</p>
+<p>3.用户浏览器向查询到的IP地址发起http请求</p>
+<p>4.服务器解析用户请求，从中提取数据，处理后向用户返回一个http相应。</p>
+<p>5.浏览器收到响应后提取状态，协议编码，正文的有效信息，然后翻译成人们可以看懂的图形界面并显示。</p>
+<p>三、常见的服务器系统<br>
+<img src="https://https://570127567.github.io/post-images/1593057325361.jpg" alt="" loading="lazy"></p>
+<p>1.Windows系统与Linux系统的区别<br>
+           Windows系统的路径： C：\Users\blackJone&gt;<br>
+           Linux系统的路径： ：/etc/init#<br>
+        看到盘符开头一定是Windows系统，看到/开头一般都是Linux系统<br>
+    <br>
+    2.绝对路径与相对路径<br>
+<img src="https://https://570127567.github.io/post-images/1593057319462.jpg" alt="" loading="lazy"></p>
+<p>例如：文件&quot;icon.jpg&quot;存在img文件中。绝对路径为D:/wamp/www/img/icon.jpg。那么相对路径为 ./img/icon.jpg。</p>
+<p>四、Web容器<br>
+       Web容器是可以向发出请求的浏览器发送文档的程序。是一种被动的程序，只有其他计算机发出请求时web容器才会相应。<br>
+       Web容器的主要功能是存储，处理和传递网页给用户，客户端和服务器之间使用http协议进行通信，交付的页面是HTML文档。</p>
+<p>常见的Web容器</p>
+<p><img src="https://https://570127567.github.io/post-images/1593057304870.jpg" alt="" loading="lazy"><br>
+版权声明：本文为CSDN博主「小孙同学y」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：https://blog.csdn.net/weixin_45790675/article/details/106956488</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://https://570127567.github.io/post/hello-gridea/</id>
+        <link href="https://https://570127567.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>

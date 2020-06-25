@@ -1,0 +1,210 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Web服务器通讯原理 | Gridea</title>
+<link rel="shortcut icon" href="https://https://570127567.github.io/favicon.ico?v=1593057907569">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://https://570127567.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Web服务器通讯原理 | Gridea - Atom Feed" href="https://https://570127567.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Web服务器通讯原理
+一、名词解释
+1.IP
+     正统定义：互联网协议地址。
+     可以俗气的理解成：ip实际上就是地址，如果我想到你家去找你玩，就要知道你家住在哪里，ip就是你电脑的地址，在网络上可以通过ip来访问你的计算机。
+..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://https://570127567.github.io">
+  <img class="avatar" src="https://https://570127567.github.io/images/avatar.png?v=1593057907569" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Web服务器通讯原理
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-06-22
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>Web服务器通讯原理</p>
+<p>一、名词解释</p>
+<p>1.IP<br>
+     正统定义：互联网协议地址。<br>
+     可以俗气的理解成：ip实际上就是地址，如果我想到你家去找你玩，就要知道你家住在哪里，ip就是你电脑的地址，在网络上可以通过ip来访问你的计算机。</p>
+<p><img src="https://https://570127567.github.io/post-images/1593057900429.jpg" alt="" loading="lazy"><br>
+   2.域名<br>
+     域名实际上是为了人们方便记忆而创造的一个字符型标识<br>
+   3.DNS<br>
+      DNS是将域名转化为IP的一个网络协议<br>
+      通俗理解为ip是计算机所理解的语言，为了方便人们记忆有了域名，而DNS是把域名连接到ip的一个方法。<br>
+   4.端口<br>
+      端口主要是网络接口，类似于电脑的接口比如你去访问别人的网站，一般来说实际上你是去他的80端口进行通信<br>
+      0端口是预留端口，一般不会用到<br>
+    5.HTTP协议<br>
+      HTTP协议也叫超文本传输协议，是互联网上应用最为广泛的一种网络协议。<br>
+      https比http多了一个叫做证书的东西，目的是为了防止中途截取</p>
+<p>二、从访客的角度看网页浏览流程<br>
+     1.用户浏览器输入协议：//域名。<br>
+        例如：http：//baidu.cn/</p>
+<p>2.用户浏览器通过系统向DNS查询域名对应的ip地址。</p>
+<p>3.用户浏览器向查询到的IP地址发起http请求</p>
+<p>4.服务器解析用户请求，从中提取数据，处理后向用户返回一个http相应。</p>
+<p>5.浏览器收到响应后提取状态，协议编码，正文的有效信息，然后翻译成人们可以看懂的图形界面并显示。</p>
+<p>三、常见的服务器系统<br>
+<img src="https://https://570127567.github.io/post-images/1593057325361.jpg" alt="" loading="lazy"></p>
+<p>1.Windows系统与Linux系统的区别<br>
+           Windows系统的路径： C：\Users\blackJone&gt;<br>
+           Linux系统的路径： ：/etc/init#<br>
+        看到盘符开头一定是Windows系统，看到/开头一般都是Linux系统<br>
+    <br>
+    2.绝对路径与相对路径<br>
+<img src="https://https://570127567.github.io/post-images/1593057319462.jpg" alt="" loading="lazy"></p>
+<p>例如：文件&quot;icon.jpg&quot;存在img文件中。绝对路径为D:/wamp/www/img/icon.jpg。那么相对路径为 ./img/icon.jpg。</p>
+<p>四、Web容器<br>
+       Web容器是可以向发出请求的浏览器发送文档的程序。是一种被动的程序，只有其他计算机发出请求时web容器才会相应。<br>
+       Web容器的主要功能是存储，处理和传递网页给用户，客户端和服务器之间使用http协议进行通信，交付的页面是HTML文档。</p>
+<p>常见的Web容器</p>
+<p><img src="https://https://570127567.github.io/post-images/1593057304870.jpg" alt="" loading="lazy"><br>
+版权声明：本文为CSDN博主「小孙同学y」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：https://blog.csdn.net/weixin_45790675/article/details/106956488</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://https://570127567.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://https://570127567.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
